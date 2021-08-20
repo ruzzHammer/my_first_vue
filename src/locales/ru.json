@@ -1,0 +1,35 @@
+{
+  "locales": {
+    "en": "en",
+    "ru": "ру"
+  },
+  "infoCard": {
+    "name": "Руслан Хахонин",
+    "catchPhrase": "Я front-end разработчик. Хотел бы выучить Vue на этом проекте.",
+    "location": "Владимир",
+    "links": {
+      "services": "Услуги",
+      "calc": "Расчёт стоимости",
+      "cases": "Кейсы"
+    },
+    "personalInfo": {
+      "title": "Личная информация",
+      "name": "Имя",
+      "location": "Место базирования",
+      "socials": "Соц.сети",
+      "phone": "Телефон",
+      "email": "Электронная почта"
+    },
+    "feedback": {
+      "title": "Обратная связь",
+      "input_name": "Имя",
+      "input_email": "Эл.почта",
+      "input_phone": "Телефон",
+      "button_text": "Отправить"
+    }
+  },
+  "footer": {
+    "privacy": "Политика <span>Конфиденциальности</span>",
+    "made": "Сделано <a href='{0}'><span>Мной</span></a>"
+  }
+}
