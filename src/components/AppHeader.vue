@@ -31,6 +31,9 @@ export default {
         @include masm {
             margin-bottom: 80px;
         }
+        @include maxs {
+            margin-bottom: 40px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -52,6 +55,10 @@ export default {
             }
             @include masm {
                 height: 220px;
+            }
+            @include maxs {
+                height: 180px;
+                background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
             }
         }
         .locale-switcher {

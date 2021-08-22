@@ -21,6 +21,9 @@ export default {
         width: 100%;
         max-width: $containerSize;
         padding: 0 15px;
+        @include malg {
+            margin: 60px auto;
+        }
         &-item {
             color: rgba(var(--text-primary-color), .5);
             text-decoration: none;

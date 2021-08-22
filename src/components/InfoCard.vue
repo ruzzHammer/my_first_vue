@@ -295,7 +295,7 @@ export default {
                 background: rgba(var(--bgc-secondary), 0.9);
                 border-radius: 10px;
                 padding: 18px 20px 18px 60px;
-                color: rgba(var(--text-primary-color, .8));
+                color: rgba(var(--text-primary-color), .8);
                 font-size: 16px;
                 border: 1px solid transparent;
                 transition: $trans;
@@ -303,7 +303,7 @@ export default {
                     padding: 15px 10px 15px 40px;
                 }
                 &::placeholder {
-                    color: rgba(var(--text-primary-color, .5));
+                    color: rgba(var(--text-primary-color), .5);
                 }
                 &:hover {
                     box-shadow: inset 0px 0px 4px rgba(var(--bs-primary), 0.1);
