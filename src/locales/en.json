@@ -1,7 +1,8 @@
 {
   "locales": {
     "en": "en",
-    "ru": "ru"
+    "ru": "ru",
+    "es": "es"
   },
   "infoCard": {
     "name": "Ruslan Khakhonin",
@@ -19,14 +20,14 @@
       "socials": "Social Media",
       "phone": "Phone Number",
       "email": "Email"
-    },
-    "feedback": {
-      "title": "Feedback",
-      "input_name": "Name",
-      "input_email": "Email",
-      "input_phone": "Phone",
-      "button_text": "Send"
     }
+  },
+  "feedback": {
+    "title": "Feedback",
+    "input_name": "Name",
+    "input_email": "Email",
+    "input_phone": "Phone",
+    "button_text": "Send"
   },
   "footer": {
     "privacy": "Privacy <span>Policy</span>",

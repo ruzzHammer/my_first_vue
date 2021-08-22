@@ -64,23 +64,23 @@
             </div>
 
             <div class="info-form">
-                <h2>{{ $t('infoCard.feedback.title') }}</h2>
+                <h2>{{ $t('feedback.title') }}</h2>
                 <form>
-                    <div class="input-group"><input type="text" name="feedbackName" id="feedbackName" :placeholder="$t('infoCard.feedback.input_name')" autocomplete="off">
+                    <div class="input-group"><input type="text" name="feedbackName" id="feedbackName" :placeholder="$t('feedback.input_name')" autocomplete="off">
                         <label for="feedbackName">
                             <span class="input-group__icon">
                                 <svg-icon icon="profile"></svg-icon>
                             </span>
                         </label>
                     </div>
-                    <div class="input-group"><input type="email" name="feedbackEmail" id="feedbackEmail" :placeholder="$t('infoCard.feedback.input_email')" autocomplete="off">
+                    <div class="input-group"><input type="email" name="feedbackEmail" id="feedbackEmail" :placeholder="$t('feedback.input_email')" autocomplete="off">
                         <label for="feedbackEmail">
                             <span class="input-group__icon">
                                 <svg-icon icon="mail"></svg-icon>
                             </span>
                         </label>
                     </div>
-                    <div class="input-group"><input type="tel" name="feedbackPhone" id="feedbackPhone" :placeholder="$t('infoCard.feedback.input_phone')"  autocomplete="off">
+                    <div class="input-group"><input type="tel" name="feedbackPhone" id="feedbackPhone" :placeholder="$t('feedback.input_phone')"  autocomplete="off">
                         <label for="feedbackPhone">
                             <span class="input-group__icon">
                                 <svg-icon icon="phone"></svg-icon>

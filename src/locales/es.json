@@ -1,0 +1,36 @@
+{
+  "locales": {
+    "en": "en",
+    "ru": "ru",
+    "es": "es"
+  },
+  "infoCard": {
+    "name": "Ruslan Khakhonin",
+    "catchPhrase": "Soy desarrollador front-end. Me gustaría aprender Vue con este proyecto.",
+    "location": "Vladimir",
+    "links": {
+      "services": "Servicios",
+      "calc": "Calculadora de costos de trabajo",
+      "cases": "Casos"
+    },
+    "personalInfo": {
+      "title": "Informacion personal",
+      "name": "Nombre",
+      "location": "Ubicación",
+      "socials": "Medios de comunicación social",
+      "phone": "Número de teléfono",
+      "email": "Correo electrónico"
+    }
+  },
+  "feedback": {
+    "title": "Realimentación",
+    "input_name": "Nombre",
+    "input_email": "Correo electrónico",
+    "input_phone": "Número de teléfono",
+    "button_text": "Enviar"
+  },
+  "footer": {
+    "privacy": "Política de <span>Privacidad</span>",
+    "made": "Hecho por <a href='{0}'><span>Mi</span></a>"
+  }
+}
