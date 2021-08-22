@@ -22,7 +22,7 @@ export default {
     SvgIcon
   },
   mounted() {
-    const initUserTheme = this.getMediaPreference();
+    const initUserTheme = localStorage.getItem("user-theme") ? localStorage.getItem("user-theme") : this.getMediaPreference();
     this.setTheme(initUserTheme);
   },
 
