@@ -6,7 +6,7 @@
   :catchPhrase="$t('infoCard.catchPhrase')"
   email="18russell.1998@gmail.com"
   :location="$t('infoCard.location')"
-  phoneNumber="+7(980)045-71-26"
+  phoneNumber="+7 (980) 045-71-26"
   :socials="[
     {
       link: 'https://vk.com/ruslan_khakhonin',
@@ -15,6 +15,14 @@
     {
       link: 'https://wa.me/79800457126',
       icon: 'wa'
+    },
+    {
+      link: 'https://instagram.com/ruzzhammer',
+      icon: 'insta'
+    },
+    {
+      link: 'https://t.me/ruzzHammer',
+      icon: 'tg'
     }
   ]"
   >
