@@ -1,6 +1,10 @@
 <template>
     <ul class="locale-switcher">
-        <li v-for="locale in locales" :key="locale" @click="switchLocale(locale); checkLocaleClassToBody(); selected = locale" :class="{active:selected == locale}" :id="locale">
+        <li v-for="locale in locales" 
+           :key="locale" 
+           @click="switchLocale(locale); checkLocaleClassToBody(); selected = locale" 
+           :class="{active: selected == locale}" 
+           :id="locale">
             {{ $t('locales.' + locale) }}
         </li>
     </ul>
@@ -56,7 +60,7 @@ export default {
             @extend .h6;
             line-height: 18px;
             text-transform: uppercase;
-            color: $theme-color;
+            color: rgb(var(--theme-primary-color));
             opacity: .5;
             cursor: pointer;
             &.active {

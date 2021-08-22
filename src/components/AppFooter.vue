@@ -22,13 +22,13 @@ export default {
         max-width: $containerSize;
         padding: 0 15px;
         &-item {
-            color: transparentize($text-color, .5);
+            color: rgba(var(--text-primary-color), .5);
             text-decoration: none;
             @extend .h6;
             margin-bottom: 0;
             transition: $trans;
             &:hover {
-                color: transparentize($theme-color, .2);
+                color: rgba(var(--theme-primary-color), .5);
             }
         }
     }
@@ -43,13 +43,13 @@ export default {
                 transition: $trans;
             }
             span {
-                color: $text-color;
+                color: rgb(var(--text-primary-color));
                 text-decoration: none;
                 transition: $trans;
             }
             &:hover {
                 span {
-                    color: $theme-color;
+                    color: rgb(var(--theme-primary-color));
                 }
             }
         }

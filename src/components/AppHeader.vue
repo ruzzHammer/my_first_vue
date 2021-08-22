@@ -1,14 +1,17 @@
 <template>
     <header class="header">
+        <theme-switcher></theme-switcher>
         <locale-switcher></locale-switcher>
     </header>
 </template>
 
 <script>
+import ThemeSwitcher from './ThemeSwitcher.vue';
 import LocaleSwitcher from './LocaleSwitcher.vue';
 export default {
     name: 'AppHeader',
     components: {
+      ThemeSwitcher,
       LocaleSwitcher
     }
 }
@@ -20,6 +23,8 @@ export default {
         margin: 0 0 162px;
         padding: 4px 9px 0;
         position: relative;
+        display: flex;
+        align-items: center;
         @include malg {
             margin-bottom: 92px;
         }
@@ -40,7 +45,7 @@ export default {
             mask-image: url(../assets/mask.png);
             mask-repeat: no-repeat;
             mask-size: 100% 100%;
-            background: linear-gradient(357deg, rgba(246, 120, 82, 0.22) 6%, rgba(255,255,255,1) 62%);
+            background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
             z-index: -1;
             @include malg {
                 height: 340px;

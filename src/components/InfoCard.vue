@@ -16,7 +16,7 @@
                 </span>
                 <span class="links-item__title">{{ $t('infoCard.links.services') }}</span>
             </a>
-            <a href="#" class="links-item links-item--orange">
+            <a href="#" class="links-item links-item--themed">
                 <span class="links-item__icon">
                     <svg-icon icon="calc"></svg-icon>
                 </span>
@@ -155,8 +155,7 @@ export default {
             }
         }
         &__title {
-            margin: 0;
-            color: #000; 
+            margin: 0; 
             @include malg {
                 margin-bottom: 10px;
             }
@@ -227,17 +226,17 @@ export default {
 
                 a {
                     text-decoration: none;
-                    color: $text-color;
+                    color: rgb(var(--text-primary-color));
                     transition: $trans;
                     &:hover {
-                        color: $theme-color;
+                        color: rgb(var(--theme-primary-color));
                     }
                 }
             }
         }
         .personal-item {
             &__name {
-                color: transparentize($text-color, .5);
+                color: rgba(var(--text-primary-color), .5);
             }
         }
     }
@@ -249,9 +248,9 @@ export default {
         a {
             &:hover {
                 svg {
-                    fill: $theme-color;
+                    fill: rgb(var(--theme-primary-color));
                     path {
-                        fill: $theme-color;
+                        fill: rgb(var(--theme-primary-color));
                     }
                 }
             }
@@ -293,10 +292,10 @@ export default {
             }
             input {
                 position: relative;
-                background: rgba(255, 255, 255, 0.9);
+                background: rgba(var(--bgc-secondary), 0.9);
                 border-radius: 10px;
                 padding: 18px 20px 18px 60px;
-                color: transparentize($text-color, .2);
+                color: rgba(var(--text-primary-color, .8));
                 font-size: 16px;
                 border: 1px solid transparent;
                 transition: $trans;
@@ -304,15 +303,15 @@ export default {
                     padding: 15px 10px 15px 40px;
                 }
                 &::placeholder {
-                    color: transparentize($text-color, .5);
+                    color: rgba(var(--text-primary-color, .5));
                 }
                 &:hover {
-                    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+                    box-shadow: inset 0px 0px 4px rgba(var(--bs-primary), 0.1);
                 }
                 &:focus {
                     outline: none;
-                    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
-                    border: 1px solid rgba(246, 121, 82, 0.3);
+                    box-shadow: inset 0px 0px 4px rgba(var(--bs-primary), 0.1);
+                    border: 1px solid rgba(var(--theme-primary-color), 0.3);
                 }
             }
             label {
@@ -331,7 +330,7 @@ export default {
             &__icon {
                 width: 36px;
                 height: 36px;
-                background: transparentize($theme-color, .9);
+                background: rgba(var(--theme-primary-color), .1);
                 border-radius: 10px;   
                 display: grid;
                 place-items: center;
@@ -355,7 +354,7 @@ export default {
 // might separate it to outer template
 .links {
     &-item {
-        background: #FFFFFF;
+        background: rgb(var(--bgc-secondary));
         box-shadow: -2px 8px 46px rgba(37, 45, 50, 0.05);
         border-radius: 10px;
         border: 1px solid transparent;
@@ -372,20 +371,18 @@ export default {
             padding: 7px;
         }
         &:hover {
-            border-color: rgba(246, 121, 82, 0.3);
-            box-shadow: 0px 0px 8px rgba(246, 121, 82, 0.25);
-            // another way of hover 
-            // box-shadow: -2px 8px 40px rgba(37, 45, 50, 0.1);
-            // transform: translateY(-10px);
+            border-color: rgba(var(--theme-primary-color), 0.3);
+            box-shadow: 0px 0px 8px rgba(var(--theme-primary-color), 0.25);
+            transform: translateY(-10px);
         }
         &--blue {
             .links-item__icon {
                 background: rgba(14, 162, 246, 0.07);
             }
         }
-        &--orange {
+        &--themed {
             .links-item__icon {
-                background: rgba(246, 121, 82, 0.07);
+                background: rgba(var(--theme-primary-color), 0.07);
             }
         }
         &--yellow {
@@ -424,7 +421,7 @@ export default {
             @extend .h2;
             margin: 0;
             opacity: .7;
-            color: $text-color;
+            color: rgb(var(--text-primary-color));
             font-weight: 500;
             text-align: center;
             @include malg {

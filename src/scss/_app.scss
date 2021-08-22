@@ -5,10 +5,30 @@ body {
     font-family: 'Space Grotesk', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #FBFBFD;
+    color: rgb(var(--text-primary-color));
+    background: rgb(var(--bgc-primary));
     &.locale-ru {
         font-family: 'Fira Sans', Arial, sans-serif;
     }
+}
+
+:root {
+  --bgc-primary: 251, 251, 253;
+  --bgc-secondary: 255, 255, 255;
+  --bs-primary: 0, 0, 0;
+  --border-primary-color: 50, 50, 50;
+  --text-primary-color: 35, 31, 32;
+  --theme-primary-color: 246, 121, 82;
+  --switch-size: 4rem;
+}
+
+:root.dark-theme {
+  --bgc-primary: 30, 30, 30;
+  --bgc-secondary: 20, 20, 20;
+  --bs-primary: 255, 255, 255;
+  --border-primary-color: 230, 230, 230;
+  --text-primary-color: 221, 221, 221;
+  --theme-primary-color: 133, 255, 173;
 }
 
 * {
@@ -102,7 +122,7 @@ p {
     display: block;
     padding: 20px;
     border: 1px solid transparent;
-    background: transparentize($theme-color, .1);
+    background: rgba(var(--theme-primary-color), .9);
     border-radius: 133px;
     text-align: center;
     font-weight: 700;
