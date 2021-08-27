@@ -13,56 +13,48 @@ export default {
     components: {
       ThemeSwitcher,
       LocaleSwitcher
-    }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-    @import '@/scss/_app.scss';
-    .header {
-        margin: 0 0 162px;
-        padding: 4px 9px 0;
-        position: relative;
-        display: flex;
-        align-items: center;
+@import '@/scss/_app.scss';
+.header {
+    margin: 0 0 24px;
+    padding: 4px 9px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: .3s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 470px;
+        -webkit-mask-image: url(../assets/mask.png);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-image: url(../assets/mask.png);
+        mask-repeat: no-repeat;
+        mask-size: 100% 100%;
+        background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
+        z-index: -1;
         @include malg {
-            margin-bottom: 92px;
+            height: 340px;
         }
         @include masm {
-            margin-bottom: 80px;
+            height: 220px;
         }
         @include maxs {
-            margin-bottom: 40px;
-        }
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 470px;
-            -webkit-mask-image: url(../assets/mask.png);
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-size: 100% 100%;
-            mask-image: url(../assets/mask.png);
-            mask-repeat: no-repeat;
-            mask-size: 100% 100%;
+            height: 180px;
             background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
-            z-index: -1;
-            @include malg {
-                height: 340px;
-            }
-            @include masm {
-                height: 220px;
-            }
-            @include maxs {
-                height: 180px;
-                background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
-            }
-        }
-        .locale-switcher {
-            margin-left: auto;
         }
     }
+    .locale-switcher {
+        margin-left: auto;
+    }
+}
 </style>

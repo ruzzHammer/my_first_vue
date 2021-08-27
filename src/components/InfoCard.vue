@@ -1,5 +1,9 @@
 <template>
-    <div class="info">
+    <div 
+    :class="{
+        'non-home': !isHome()    
+    }"
+    class="info">
         <div class="info-header">
             <div class="info-header__img" v-if="avatar">
                 <img :src="require(`@/assets/${avatar}`)" alt="">
@@ -9,26 +13,7 @@
             <p class="info-header__subtitle" v-if="catchPhrase">{{ catchPhrase }}</p>
         </div>
         
-        <div class="info-links">
-            <a href="#" class="links-item links-item--blue">
-                <span class="links-item__icon">
-                    <svg-icon icon="code"></svg-icon>
-                </span>
-                <span class="links-item__title">{{ $t('infoCard.links.services') }}</span>
-            </a>
-            <a href="#" class="links-item links-item--themed">
-                <span class="links-item__icon">
-                    <svg-icon icon="calc"></svg-icon>
-                </span>
-                <span class="links-item__title">{{ $t('infoCard.links.calc') }}</span>
-            </a>
-            <a href="#" class="links-item links-item--yellow">
-                <span class="links-item__icon">
-                    <svg-icon icon="star"></svg-icon>
-                </span>
-                <span class="links-item__title">{{ $t('infoCard.links.cases') }}</span>
-            </a>
-        </div>
+        <navigation-links></navigation-links>
 
         <div class="info-body">
             <div class="info-personal">
@@ -62,40 +47,15 @@
                     </tr>
                 </table>
             </div>
-
-            <div class="info-form">
-                <h2>{{ $t('feedback.title') }}</h2>
-                <form>
-                    <div class="input-group"><input type="text" name="feedbackName" id="feedbackName" :placeholder="$t('feedback.input_name')" autocomplete="off">
-                        <label for="feedbackName">
-                            <span class="input-group__icon">
-                                <svg-icon icon="profile"></svg-icon>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="input-group"><input type="email" name="feedbackEmail" id="feedbackEmail" :placeholder="$t('feedback.input_email')" autocomplete="off">
-                        <label for="feedbackEmail">
-                            <span class="input-group__icon">
-                                <svg-icon icon="mail"></svg-icon>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="input-group"><input type="tel" name="feedbackPhone" id="feedbackPhone" :placeholder="$t('feedback.input_phone')"  autocomplete="off">
-                        <label for="feedbackPhone">
-                            <span class="input-group__icon">
-                                <svg-icon icon="phone"></svg-icon>
-                            </span>
-                        </label>
-                    </div>
-                    <button type="submit" class="button">Send</button>
-                </form>
-            </div>
+            <feedback-form></feedback-form>
         </div>
     </div>
 </template>
 
 <script>
 import SvgIcon from './SvgIcon.vue';
+import FeedbackForm from './FeedbackForm.vue';
+import NavigationLinks from './NavigationLinks.vue';
 
 export default {
     name: 'InfoCard',
@@ -109,9 +69,15 @@ export default {
         email: String,
     },
     components: {
-        SvgIcon
+        SvgIcon,
+        FeedbackForm,
+        NavigationLinks
     },
-
+    methods: {
+        isHome() {
+            return this.$route.name === 'Home'
+        }
+    }
 }
 </script>
 
@@ -125,12 +91,19 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 138px;
         margin-bottom: 100px;
+        transition: .3s ease-in-out;
         @include malg {
+            margin-top: 68px;
             margin-bottom: 50px;
         }
         @include masm {
+            margin-top: 50px;
             margin-bottom: 24px;
+        }
+        @include maxs {
+            margin-top: 20px;
         }
         &__img {
             display: block;
@@ -139,6 +112,7 @@ export default {
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 23px;
+            transition: .3s ease-in-out;
             @include malg {
                 width: 260px;
                 height: 260px;
@@ -156,6 +130,7 @@ export default {
         }
         &__title {
             margin: 0; 
+            transition: .3s ease-in-out;
             @include malg {
                 margin-bottom: 10px;
             }
@@ -165,26 +140,11 @@ export default {
             max-width: 646px;
             margin: 0;
             text-align: center;
+            transition: .5s ease-in-out;
             @include malg {
                 max-width: 500px;
                 padding: 0 15px;
             }
-        }
-    }
-    &-links {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-        width: 100%;
-        max-width: $containerSize;
-        padding: 0 15px;
-        margin-bottom: 120px;
-        @include malg {
-            margin-bottom: 80px;
-        }
-        @include masm {
-            margin-bottom: 40px;
-            gap: 10px;
         }
     }
 
@@ -264,172 +224,24 @@ export default {
             }
         }
     }
-    &-form {
-        display: flex;
-        flex-direction: column;
-        max-width: 340px;
-        @include malg {
-            align-items: center;
-            margin: 0 auto;
-        }
-        form {
-            @extend .round-bordered;
-            padding-top: 33px;
-            flex: 1;
-            margin: 0 auto;
-        }
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-            @include maxs {
-                margin-bottom: 15px;
-            }
-            &:last-of-type {
-                margin-bottom: 27px;
-                @include maxs {
-                    margin-bottom: 22px;
-                }
-            }
-            input {
-                position: relative;
-                background: rgba(var(--bgc-secondary), 0.9);
-                border-radius: 10px;
-                padding: 18px 20px 18px 60px;
-                color: rgba(var(--text-primary-color), .8);
-                font-size: 16px;
-                border: 1px solid transparent;
-                transition: $trans;
-                @include masm {
-                    padding: 15px 10px 15px 40px;
-                }
-                &::placeholder {
-                    color: rgba(var(--text-primary-color), .5);
-                }
-                &:hover {
-                    box-shadow: inset 0px 0px 4px rgba(var(--bs-primary), 0.1);
-                }
-                &:focus {
-                    outline: none;
-                    box-shadow: inset 0px 0px 4px rgba(var(--bs-primary), 0.1);
-                    border: 1px solid rgba(var(--theme-primary-color), 0.3);
-                }
-            }
-            label {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                padding: 12px;
-                pointer-events: none;
-                @include maxs {
-                    padding: 10px;
-                }
-            }
-            &__icon {
-                width: 36px;
-                height: 36px;
-                background: rgba(var(--theme-primary-color), .1);
-                border-radius: 10px;   
-                display: grid;
-                place-items: center;
-                @include maxs {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 6px;
-                }
-                .icon {
-                    width: 50%;
-                    height: 50%;
-                }
-            }
-        }
-        .button {
-            width: 100%;
-        }
-    }
 }
-
-// might separate it to outer template
-.links {
-    &-item {
-        background: rgb(var(--bgc-secondary));
-        box-shadow: -2px 8px 46px rgba(37, 45, 50, 0.05);
-        border-radius: 10px;
-        border: 1px solid transparent;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 28px 40px;
-        text-decoration: none;
-        transition: $trans;
-        @include mamd {
-            padding: 20px;
-        }
-        @include masm {
-            padding: 7px;
-        }
-        &:hover {
-            border-color: rgba(var(--theme-primary-color), 0.3);
-            box-shadow: 0px 0px 8px rgba(var(--theme-primary-color), 0.25);
-            transform: translateY(-10px);
-        }
-        &--blue {
-            .links-item__icon {
-                background: rgba(14, 162, 246, 0.07);
-            }
-        }
-        &--themed {
-            .links-item__icon {
-                background: rgba(var(--theme-primary-color), 0.07);
-            }
-        }
-        &--yellow {
-            .links-item__icon {
-                background: rgba(255, 193, 7, 0.07);
-            }
-        }
-        &__icon {
-            display: grid;
-            place-items: center;
-            width: 138px;
-            height: 138px;
-            border-radius: 50%;
-            margin-bottom: 19px;
-            @include malg {
-                width: 80px;
-                height: 80px;
-            }
-            @include masm {
-                width: 45px;
-                height: 45px;
-            }
-            .icon {
-                width: 60px;
-                height: auto;
-                @include malg {
-                    width: 40%;
-                }
-                @include masm {
-                    width: 23px;
-                }
-            }
-            
+.transition-leave-to,
+.transition-enter-from,
+.non-home {
+    .info-header {
+        margin-top: 0;
+        margin-bottom: 7px;
+        &__img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 4px;
         }
         &__title {
-            @extend .h2;
-            margin: 0;
-            opacity: .7;
-            color: rgb(var(--text-primary-color));
-            font-weight: 500;
-            text-align: center;
-            @include malg {
-                font-size: 20px;
-            }
-            @include masm {
-                font-size: 16px;
-            }
+            font-size: 24px;
+            line-height: 30px;
+        }
+        &__subtitle {
+            display: none;
         }
     }
 }

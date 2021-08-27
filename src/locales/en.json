@@ -9,8 +9,10 @@
     "catchPhrase": "I'm a front-end developer. I'd like to learn Vue with this project.",
     "location": "Vladimir",
     "links": {
+      "home": "Home",
       "services": "Services",
       "calc": "Job Cost Calculator",
+      "calcAlt": "Calculator",
       "cases": "Cases"
     },
     "personalInfo": {
