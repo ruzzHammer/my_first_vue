@@ -109,7 +109,7 @@ export default {
             border-radius: 10px;   
             display: grid;
             place-items: center;
-            @include maxs {
+            @include masm {
                 width: 24px;
                 height: 24px;
                 border-radius: 6px;
@@ -122,6 +122,17 @@ export default {
     }
     .button {
         width: 100%;
+    }
+}
+
+.non-home {
+    .feedback-form {
+        form {
+            background: rgba(255, 255, 255, .5);
+        }
+        h2 {
+            color: rgb(255, 255, 255);
+        }
     }
 }
 </style>

@@ -16,7 +16,8 @@
             {{ $t(`projects.keywords.${category}`) }}
         </button>
       </div>
-      <div class="projects-list" v-if="projects.length">
+      <!-- <div class="projects-list" v-if="projects.length" ref="projectsListWrapper" :style="{height: `${this.$refs.projectsListWrapper.innerHeight}px`}"> -->
+          <div class="projects-list" v-if="projects.length">
           <projects-list 
           :array="sites" 
           v-if="currentCategory === 'sites'"
@@ -78,6 +79,7 @@ export default {
         }
     },
     mounted() {
+        document.querySelector('.projects-list').style.minHeight = `${document.querySelector('.projects-list').clientHeight}px`
     },
     components: {
         ProjectsList,
@@ -89,8 +91,9 @@ export default {
     @import '@/scss/_app.scss';
     .projects {
         max-width: $containerSize;
-        margin: 47px auto 0;
+        margin: 47px auto;
         width: 100%;
+        padding: 0 15px;
         transition: .3s ease-in-out;
         &-nav {
             display: grid;
@@ -99,6 +102,11 @@ export default {
             padding-bottom: 47px;
             margin-bottom: 50px;
             position: relative;
+            @include masm {
+                gap: 15px;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+            }
             &::before {
                 content: '';
                 position: absolute;
@@ -119,6 +127,11 @@ export default {
                 padding: 20px;
                 box-shadow: -2px 8px 46px rgba(37, 45, 50, 0.05);
                 border-radius: 10px;
+                cursor: pointer;
+                @include masm {
+                    padding: 10px;
+                    font-size: 14px;
+                }
                 &.reversed {
                     background: rgba(255, 255, 255, 1);
                     color: rgb(30, 30, 30);
@@ -128,7 +141,13 @@ export default {
                 }
                 &.active {
                     &::after {
-                        border-width: 93px 97px 0 97px;
+                        border-width: 70px 80px 0 80px;
+                        @include malg {
+                            border-width: 35px 40px 0 40px;
+                        }
+                        @include masm {
+                            border-width: 25px 30px 0 30px;
+                        }
                     }
                 }
                 &::after {
@@ -141,17 +160,35 @@ export default {
                     width: 0;
                     height: 0;
                     border-style: solid;
-                    border-width: 0 97px 0 97px;
+                    border-width: 0 80px 0 80px;
                     border-color: rgb(var(--theme-primary-color)) transparent transparent transparent;
                     transition: .3s ease-in-out;
+                    @include malg {
+                        border-width: 0 40px 0 40px;
+                    }
+                    @include masm {
+                        border-width: 0 30px 0 30px;
+                    }
                 }
             }
         }
         &-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 440px));
+            grid-template-rows: 275px;
             gap: 45px 40px;
             justify-content: center;
+            position: relative;
+            padding-bottom: 75px;
+            max-width: 920px;
+            margin: 0 auto;
+            @include malg {
+                gap: 30px;
+            }
+            @include masm {
+                grid-template-columns: 1fr;
+                grid-template-rows: 220px;
+            }
         }
     }
 </style>

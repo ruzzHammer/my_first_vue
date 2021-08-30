@@ -26,17 +26,14 @@
   ]"
   >
   </info-card>
-  <app-projects></app-projects>
 </template>
 
 <script>
 import InfoCard from '@/components/InfoCard.vue';
-import AppProjects from '@/components/AppProjects.vue';
 export default {
   name: 'Home',
   components: {
     InfoCard,
-    AppProjects
   }
 }
 </script>

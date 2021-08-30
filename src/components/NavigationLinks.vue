@@ -3,20 +3,20 @@
         <router-link v-if="!isHome()" class="links-item links-item--home" to="/">
             <span class="links-item__title">{{ $t('titles.home') }}</span>
         </router-link>
-        <router-link class="links-item links-item--blue" to="/Services" active-class="links-item--active">
+        <router-link @click="scrollToTop" class="links-item links-item--blue" to="/Services" active-class="links-item--active">
             <span class="links-item__icon">
                 <svg-icon icon="code"></svg-icon>
             </span>
             <span class="links-item__title">{{ $t('titles.services') }}</span>
         </router-link>
-        <router-link class="links-item links-item--themed" to="/Calc" active-class="links-item--active">
+        <router-link @click="scrollToTop" class="links-item links-item--themed" to="/Calc" active-class="links-item--active">
             <span class="links-item__icon">
                 <svg-icon icon="calc"></svg-icon>
             </span>
             <span v-if="isHome()" class="links-item__title">{{ $t('titles.calc') }}</span>
             <span v-else class="links-item__title">{{ $t('titles.calcAlt') }}</span>
         </router-link>
-        <router-link class="links-item links-item--yellow" to="/Cases" active-class="links-item--active">
+        <router-link @click="scrollToTop" class="links-item links-item--yellow" to="/Cases" active-class="links-item--active">
             <span class="links-item__icon">
                 <svg-icon icon="star"></svg-icon>
             </span>
@@ -34,6 +34,12 @@ export default {
     methods: {
         isHome() {
             return this.$route.name === 'Home'
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+            });
         }
     }
 }

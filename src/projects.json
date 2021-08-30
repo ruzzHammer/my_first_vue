@@ -7,7 +7,7 @@
             "time": "50",
             "price": "700$",
             "used": "HTML, CSS, JS",
-            "background": "@/assets/projects/project-1.jpg"
+            "image": "projects/project-1.jpg"
         },
         {
             "category": "sites",
@@ -16,7 +16,7 @@
             "time": "20",
             "price": "400$",
             "used": "HTML, CSS, JS",
-            "background": "@/assets/projects/project-2.jpg"
+            "image": "projects/project-2.jpg"
         },
         {
             "category": "sites",
@@ -25,7 +25,7 @@
             "time": "30",
             "price": "300$",
             "used": "VUE",
-            "background": "@/assets/projects/project-0.jpg"
+            "image": "projects/project-1.jpg"
         },
         {
             "category": "apps",
@@ -34,7 +34,7 @@
             "time": "120",
             "price": "0$",
             "used": "HTML, CSS, JS",
-            "background": "@/assets/projects/project-1.jpg"
+            "image": "projects/project-3.jpg"
         },
         {
             "category": "apps",
@@ -43,7 +43,7 @@
             "time": "20",
             "price": "200$",
             "used": "HTML, CSS, JS",
-            "background": "@/assets/projects/project-2.jpg"
+            "image": "projects/project-4.jpg"
         },
         {
             "category": "apps",
@@ -52,7 +52,7 @@
             "time": "80",
             "price": "800$",
             "used": "VUE",
-            "background": "@/assets/projects/project-0.jpg"
+            "image": "projects/project-3.jpg"
         },
         {
             "category": "another category 1",
@@ -61,7 +61,299 @@
             "time": "10",
             "price": "10$",
             "used": "VUE",
-            "background": "@/assets/projects/project-0.jpg"
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "130",
+            "price": "40$",
+            "used": "SCSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example1.name",
+            "desc": "projects.sites_example1.desc",
+            "time": "50",
+            "price": "700$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example7.name",
+            "desc": "projects.sites_example2.desc",
+            "time": "20",
+            "price": "400$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example0.name",
+            "desc": "projects.sites_example0.desc",
+            "time": "30",
+            "price": "300$",
+            "used": "VUE",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example1.name",
+            "desc": "projects.apps_example1.desc",
+            "time": "120",
+            "price": "0$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example2.name",
+            "desc": "projects.apps_example2.desc",
+            "time": "20",
+            "price": "200$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-4.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example0.name",
+            "desc": "projects.apps_example0.desc",
+            "time": "80",
+            "price": "800$",
+            "used": "VUE",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "another category 1",
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "10",
+            "price": "10$",
+            "used": "VUE",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "130",
+            "price": "40$",
+            "used": "SCSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example1.name",
+            "desc": "projects.sites_example1.desc",
+            "time": "50",
+            "price": "700$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example2.name",
+            "desc": "projects.sites_example2.desc",
+            "time": "20",
+            "price": "400$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example0.name",
+            "desc": "projects.sites_example0.desc",
+            "time": "30",
+            "price": "300$",
+            "used": "VUE",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example1.name",
+            "desc": "projects.apps_example1.desc",
+            "time": "120",
+            "price": "0$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example2.name",
+            "desc": "projects.apps_example2.desc",
+            "time": "20",
+            "price": "200$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-4.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example0.name",
+            "desc": "projects.apps_example0.desc",
+            "time": "80",
+            "price": "800$",
+            "used": "VUE",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "another category 1",
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example10.desc",
+            "time": "10",
+            "price": "10$",
+            "used": "VUE",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "130",
+            "price": "40$",
+            "used": "SCSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example1.name",
+            "desc": "projects.sites_example1.desc",
+            "time": "50",
+            "price": "700$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example8.name",
+            "desc": "projects.sites_example2.desc",
+            "time": "20",
+            "price": "400$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example0.name",
+            "desc": "projects.sites_example0.desc",
+            "time": "30",
+            "price": "300$",
+            "used": "VUE",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example1.name",
+            "desc": "projects.apps_example1.desc",
+            "time": "120",
+            "price": "0$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example7.name",
+            "desc": "projects.apps_example2.desc",
+            "time": "20",
+            "price": "200$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-4.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example0.name",
+            "desc": "projects.apps_example0.desc",
+            "time": "80",
+            "price": "800$",
+            "used": "VUE",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "another category 1",
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example10.desc",
+            "time": "10",
+            "price": "10$",
+            "used": "VUE",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "130",
+            "price": "40$",
+            "used": "SCSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example1.name",
+            "desc": "projects.sites_example1.desc",
+            "time": "50",
+            "price": "700$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example2.name",
+            "desc": "projects.sites_example2.desc",
+            "time": "20",
+            "price": "400$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example0.name",
+            "desc": "projects.sites_example0.desc",
+            "time": "30",
+            "price": "300$",
+            "used": "VUE",
+            "image": "projects/project-1.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example1.name",
+            "desc": "projects.apps_example1.desc",
+            "time": "120",
+            "price": "0$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example9.name",
+            "desc": "projects.apps_example2.desc",
+            "time": "20",
+            "price": "200$",
+            "used": "HTML, CSS, JS",
+            "image": "projects/project-4.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example0.name",
+            "desc": "projects.apps_example0.desc",
+            "time": "80",
+            "price": "800$",
+            "used": "VUE",
+            "image": "projects/project-3.jpg"
+        },
+        {
+            "category": "another category 1",
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "10",
+            "price": "10$",
+            "used": "VUE",
+            "image": "projects/project-2.jpg"
+        },
+        {
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "130",
+            "price": "40$",
+            "used": "SCSS, JS",
+            "image": "projects/project-1.jpg"
         }
     ]
 }

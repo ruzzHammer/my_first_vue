@@ -40,7 +40,7 @@ body {
   --border-primary-color: 230, 230, 230;
   --text-primary-color: 221, 221, 221;
   --text-inverted-color: 15, 15, 15;
-  --theme-primary-color: 133, 255, 173;
+  --theme-primary-color: 0, 143, 48;
 }
 
 * {
@@ -65,6 +65,7 @@ h1, .h1 {
 h2, .h2 {
     font-size: 34px;
     line-height: 43px;
+    margin: 0 0 40px;
     @include malg {
         font-size: 28px;
         line-height: 1.2;
@@ -162,3 +163,34 @@ p {
     width: 50px; 
     height: 50px;
   }
+
+  
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

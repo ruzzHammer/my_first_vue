@@ -1,24 +1,27 @@
 <template>
     <div class="info">
         <div class="info-header">
-            <div class="info-header__img" v-if="avatar">
-                <img :src="require(`@/assets/${avatar}`)" alt="">
+            <div class="info-header__top">
+                <router-link to="/" v-if="!isHome()" class="info-header__link-to-home"></router-link>
+                <div class="info-header__img" v-if="avatar">
+                    <img :src="require(`@/assets/${avatar}`)" alt="">
+                </div>
+
+                <h1 class="info-header__title" v-if="name">{{ name }}</h1>
+                <p class="info-header__subtitle" v-if="catchPhrase">{{ catchPhrase }}</p>
             </div>
-            
-            <h1 class="info-header__title" v-if="name">{{ name }}</h1>
-            <p class="info-header__subtitle" v-if="catchPhrase">{{ catchPhrase }}</p>
             <p class="info-header__page-title" v-if="!isHome()">{{ $t(`titles.${(this.$route.name).toLowerCase()}`) }}</p>
             <div class="info-header__navigation">
                 <app-socials v-if="!isHome()" :socials="socials"></app-socials>
                 <navigation-links></navigation-links>
             </div>
         </div>
-        
 
-        <div
-        v-if="isHome()" 
-        class="info-body">
+        <app-projects v-if="this.$route.name === 'Cases'"></app-projects>
+
+        <div class="info-body">
             <div class="info-personal">
+                <template v-if="isHome()">
                 <h2>{{ $t('infoCard.personalInfo.title') }}</h2>
                 <table>
                     <tr class="personal-item" v-if="name">
@@ -48,6 +51,10 @@
                         <td class="personal-item__value"><a :href="`mailto:${email}`">{{ email }}</a></td>
                     </tr>
                 </table>
+                </template>
+                <template v-else>
+                    <svg-icon icon="coder"></svg-icon>
+                </template>
             </div>
             <feedback-form></feedback-form>
         </div>
@@ -59,6 +66,7 @@ import SvgIcon from './SvgIcon.vue';
 import FeedbackForm from './FeedbackForm.vue';
 import NavigationLinks from './NavigationLinks.vue';
 import AppSocials from './AppSocials.vue';
+import AppProjects from './AppProjects.vue';
 
 export default {
     name: 'InfoCard',
@@ -75,7 +83,8 @@ export default {
         SvgIcon,
         FeedbackForm,
         NavigationLinks,
-        AppSocials
+        AppSocials,
+        AppProjects
     },
     methods: {
         isHome() {
@@ -157,6 +166,22 @@ export default {
             color: rgb(var(--text-inverted-color));
             font-weight: 700;
             animation: .3s fadeIn ease-in-out forwards;
+            @include malg {
+                font-size: 48px;
+                line-height: 1.15;
+                margin: -10px auto 10px;
+            }
+        }
+        &__top {
+            position: relative;
+        }
+        &__link-to-home {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
         }
     }
 
@@ -168,6 +193,9 @@ export default {
         padding: 0 15px;
         @include malg {
             flex-direction: column;
+            .coder-icon {
+                display: none;
+            }
         }
         h2 {
             margin-bottom: 44px;
@@ -260,6 +288,11 @@ export default {
                 .socials {
                     justify-content:  flex-start;
                     margin-bottom: 30px;
+                    @include malg {
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 15px;
+                    }
                 }
             }
         }
@@ -268,9 +301,12 @@ export default {
 .non-home {
     .info-header {
         &__navigation {
-            position: absolute;
-            top: -3px;
-            left: 0;
+            
+            @include milg {
+                position: absolute;
+                top: -3px;
+                left: 15px;
+            }
         }
     }
 }
@@ -278,9 +314,11 @@ export default {
     .transition-enter-active, & {
         .info-header {
             &__navigation {
-                position: absolute;
-                top: -3px;
-                left: 0;
+                @include milg {
+                    position: absolute;
+                    top: -3px;
+                    left: 15px;
+                }
             }
         }
     }
@@ -295,24 +333,6 @@ export default {
         &__page-title {
             animation: .3s fadeOut ease-in-out forwards;
         }
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
     }
 }
 

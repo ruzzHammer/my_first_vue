@@ -43,28 +43,39 @@ export default {
     content: '';
     display: block;
     position: absolute;
-    top: -10%;
-    right: 0;
-    width: 65%;
-    min-width: 947px;
-    height: 110%;
+    top: -80px;
+    right: -100%;
+    max-width: 1302px;
+    min-width: 1302px;
+    height: calc(100% + 80px);
     min-height: 2315px;
-    -webkit-mask-image: url(assets/mask-vertical.png);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-image: url(assets/mask-vertical.png);
+    mask-image: url(assets/mask-vertical.svg);
     mask-repeat: no-repeat;
-    mask-size: 100% 100%;
+    mask-size: 100%;
     background: linear-gradient(to bottom, rgba(var(--theme-primary-color), .85) 80%, rgba(var(--bgc-primary),1) 100%);
-    z-index: -1;
+    z-index: -10;
     opacity: 0;
     right: -100%;
     transition: .8s ease-in-out;
   }
   &.non-home {
     &::before {
-      right: 0;
+      right: -100px;
       opacity: 1;
+      @media (max-width: 1200px) {
+        opacity: .6;
+      }
+    }
+  }
+}
+.dark-theme {
+  .content-wrap {
+    &.non-home {
+      &::before {
+        @media (max-width: 1200px) {
+          opacity: .3;
+        }
+      }
     }
   }
 }

@@ -69,4 +69,11 @@ export default {
             }
         }
     }
+    .non-home {
+      .locale-switcher {
+        li {
+          color: #fff;
+        }
+      }
+    }
 </style>

@@ -4,15 +4,17 @@
     "ru": "ru",
     "es": "es"
   },
+  "titles": {
+    "home": "Portada",
+    "services": "Servicios",
+    "calc": "Calculadora de costos de trabajo",
+    "calcAlt": "Calculadora",
+    "cases": "Casos"
+  },
   "infoCard": {
     "name": "Ruslan Khakhonin",
     "catchPhrase": "Soy desarrollador front-end. Me gustaría aprender Vue con este proyecto.",
     "location": "Vladimir",
-    "links": {
-      "services": "Servicios",
-      "calc": "Calculadora de costos de trabajo",
-      "cases": "Casos"
-    },
     "personalInfo": {
       "title": "Informacion personal",
       "name": "Nombre",
@@ -32,5 +34,72 @@
   "footer": {
     "privacy": "Política de <span>Privacidad</span>",
     "made": "Hecho por <a href='{0}'><span>Mi</span></a>"
+  },
+
+  "projects": {
+    "keywords": {
+      "sites": "Sitios",
+      "apps": "Apps",
+      "other": "Otro",
+      "hrs": "hrs",
+      "used": "Usado",
+      "hover": "Abrir en una nueva pestaña"
+    },
+    "sites_example1": {
+      "name": "Sites Example 1",
+      "desc": "Sites Example 1 Description"
+    },
+    "sites_example2": {
+      "name": "Sites Example 2",
+      "desc": "Sites Example 2 Description"
+    }, 
+    "sites_example0": {
+      "name": "Sites Example Zero",
+      "desc": "Sites Example Zero Description"
+    },
+    "apps_example1": {
+      "name": "Apps Example 1",
+      "desc": "Apps Example 1 Description"
+    },
+    "apps_example2": {
+      "name": "Apps Example 2",
+      "desc": "Apps Example 2 Description"
+    }, 
+    "apps_example0": {
+      "name": "Apps Example Zero",
+      "desc": "Apps Example Zero Description"
+    },
+    "other_example0": {
+      "name": "Other Example Zero",
+      "desc": "Other Example Zero Description"
+    },
+    "sites_example7": {
+      "name": "Sites Example 7",
+      "desc": "Sites Example 1 Description"
+    },
+    "sites_example8": {
+      "name": "Sites Example 8",
+      "desc": "Sites Example 2 Description"
+    }, 
+    "sites_example9": {
+      "name": "Sites Example 9",
+      "desc": "Sites Example Zero Description"
+    },
+    "apps_example7": {
+      "name": "Apps Example 7",
+      "desc": "Apps Example 1 Description"
+    },
+    "apps_example8": {
+      "name": "Apps Example 8",
+      "desc": "Apps Example 2 Description"
+    }, 
+    "apps_example9": {
+      "name": "Apps Example 9",
+      "desc": "Apps Example Zero Description"
+    },
+    "other_example10": {
+      "name": "Other Example 10",
+      "desc": "Other Example 10 Description"
+    }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div 
-    v-for="(project, index) in array"
+    v-for="(project, index) in filteredProjects(array)"
     :key="index"
     class="projects-item">
         <div class="projects-item__header">
@@ -17,15 +17,55 @@
             </div>
             <p class="projects-item__price">{{ project.price }}</p>
         </div>
+        <div class="projects-item__bg">
+            <img :src="require(`@/assets/${project.image}`)" alt="">
+        </div>
+        <a @click.prevent="" href="" class="projects-item__hover">
+            <span>{{ $t('projects.keywords.hover') }}</span>
+        </a>
+    </div>
+    <div class="projects-pagination">
+        <button 
+        @click="page = page - 1"
+        v-if="page > 1"
+        class="btn-pagination btn-back">&#11114;</button>
+        <button 
+        v-for="n in pages"
+        :key="n"
+        @click="page = n"
+        :class="{
+            active: n === this.page    
+        }"
+        >{{ n }}</button>
+        <button
+        @click="page = page + 1"
+        v-if="hasNextPage"
+        class="btn-pagination btn-next">&#10143;</button>
     </div>
 </template>
 
 <script>
 export default {
     name: 'ProjectsList',
+    data() {
+        return {
+            page: 1,
+            pages: Math.ceil(this.array.length / 6),
+            hasNextPage: true
+        }
+    },
     props: {
         array: {
             type: Array,
+        }
+    },
+    methods: {
+        filteredProjects(array) {
+            const start = (this.page - 1) * 6;
+            const end = this.page * 6;
+            this.hasNextPage = array.length > end;
+
+            return array.slice(start, end);
         }
     }
 }
@@ -40,6 +80,35 @@ export default {
         padding: 20px;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
+        max-height: 275px;
+        opacity: 0;
+        animation: .5s fadeInUp forwards;
+        &:nth-child(2) {
+            animation-delay: .2s;
+        }
+        &:nth-child(3) {
+            animation-delay: .4s;
+        }
+        &:nth-child(4) {
+            animation-delay: .6s;
+        }
+        &:nth-child(5) {
+            animation-delay: .8s;
+        }
+        &:nth-child(6) {
+            animation-delay: 1s;
+        }
+        @include masm {
+            max-height: 220px;
+            min-height: 220px;
+        }
+        &:hover {
+            .projects-item__hover {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
         &::before {
             content: '';
             display: block;
@@ -48,8 +117,7 @@ export default {
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 10px;
-            background: rgba(var(--theme-primary-color), .5);
+            background: rgba(var(--theme-primary-color), .75);
             z-index: -1;
         }
         &__header {
@@ -76,6 +144,10 @@ export default {
             color: #fff;
             font-weight: 500;
             margin-bottom: 70px;
+            @include masm {
+                margin-bottom: 20px;
+                max-width: none;
+            }
         }
         &__footer {
             display: flex;
@@ -95,6 +167,72 @@ export default {
             font-weight: 500;
             color: #fff;
             margin: 0;
+        }
+        &__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity .3s ease-in-out;
+            background: rgba(var(--theme-primary-color), .9);
+            pointer-events: none;
+            text-decoration: none;
+            span {
+                font-size: 40px;
+                line-height: 1;
+                color: #fff;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+    }
+    .projects-pagination {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        gap: 12px;
+        button {
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border-radius: 5px;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            border: 1px solid transparent;
+            &.active {
+                border-color: rgba(var(--theme-primary-color), 1);
+                &:hover {
+                    border-color: rgba(var(--theme-primary-color), 1);
+                }
+            }
+            &:hover {
+                border-color: rgba(var(--theme-primary-color), 0.3);
+            }
         }
     }
 </style>
