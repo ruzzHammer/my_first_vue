@@ -1,26 +1,26 @@
 <template>
     <div class="navigation-links">
         <router-link v-if="!isHome()" class="links-item links-item--home" to="/">
-            <span class="links-item__title">{{ $t('infoCard.links.home') }}</span>
+            <span class="links-item__title">{{ $t('titles.home') }}</span>
         </router-link>
         <router-link class="links-item links-item--blue" to="/Services" active-class="links-item--active">
             <span class="links-item__icon">
                 <svg-icon icon="code"></svg-icon>
             </span>
-            <span class="links-item__title">{{ $t('infoCard.links.services') }}</span>
+            <span class="links-item__title">{{ $t('titles.services') }}</span>
         </router-link>
         <router-link class="links-item links-item--themed" to="/Calc" active-class="links-item--active">
             <span class="links-item__icon">
                 <svg-icon icon="calc"></svg-icon>
             </span>
-            <span v-if="isHome()" class="links-item__title">{{ $t('infoCard.links.calc') }}</span>
-            <span v-else class="links-item__title">{{ $t('infoCard.links.calcAlt') }}</span>
+            <span v-if="isHome()" class="links-item__title">{{ $t('titles.calc') }}</span>
+            <span v-else class="links-item__title">{{ $t('titles.calcAlt') }}</span>
         </router-link>
         <router-link class="links-item links-item--yellow" to="/Cases" active-class="links-item--active">
             <span class="links-item__icon">
                 <svg-icon icon="star"></svg-icon>
             </span>
-            <span class="links-item__title">{{ $t('infoCard.links.cases') }}</span>
+            <span class="links-item__title">{{ $t('titles.cases') }}</span>
         </router-link>
     </div>
 </template>
@@ -48,7 +48,7 @@ export default {
     width: 100%;
     max-width: $containerSize;
     padding: 0 15px;
-    margin-bottom: 120px;
+    margin: 100px 0 120px;
     transition: .5s ease-in-out;
     @include malg {
         margin-bottom: 80px;
@@ -63,6 +63,7 @@ export default {
     .navigation-links {
         grid-template-columns: 70px 120px;
         gap: 8px 12px;
+        margin: 7px 0 0;
     }
     .links {
         &-item {
@@ -204,7 +205,9 @@ export default {
 }
 
 .transition-leave-to,
-.transition-enter-from {
+.transition-enter,
+.transition-leave-active,
+.transition-enter-active {
     .navigation-links {
         opacity: 0;
     }

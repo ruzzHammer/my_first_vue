@@ -4,17 +4,17 @@
     "ru": "ru",
     "es": "es"
   },
+  "titles": {
+    "home": "Home",
+    "services": "Services",
+    "calc": "Job Cost Calculator",
+    "calcAlt": "Calculator",
+    "cases": "Cases"
+  },
   "infoCard": {
     "name": "Ruslan Khakhonin",
     "catchPhrase": "I'm a front-end developer. I'd like to learn Vue with this project.",
     "location": "Vladimir",
-    "links": {
-      "home": "Home",
-      "services": "Services",
-      "calc": "Job Cost Calculator",
-      "calcAlt": "Calculator",
-      "cases": "Cases"
-    },
     "personalInfo": {
       "title": "Personal Information",
       "name": "Name",
@@ -34,5 +34,43 @@
   "footer": {
     "privacy": "Privacy <span>Policy</span>",
     "made": "Made by <a href='{0}'><span>Me</span></a>"
+  },
+
+  "projects": {
+    "keywords": {
+      "sites": "Sites",
+      "apps": "Apps",
+      "other": "Other",
+      "hrs": "hrs",
+      "used": "Used"
+    },
+    "sites_example1": {
+      "name": "Sites Example 1",
+      "desc": "Sites Example 1 Description"
+    },
+    "sites_example2": {
+      "name": "Sites Example 2",
+      "desc": "Sites Example 2 Description"
+    }, 
+    "sites_example0": {
+      "name": "Sites Example Zero",
+      "desc": "Sites Example Zero Description"
+    },
+    "apps_example1": {
+      "name": "Apps Example 1",
+      "desc": "Apps Example 1 Description"
+    },
+    "apps_example2": {
+      "name": "Apps Example 2",
+      "desc": "Apps Example 2 Description"
+    }, 
+    "apps_example0": {
+      "name": "Apps Example Zero",
+      "desc": "Apps Example Zero Description"
+    },
+    "other_example0": {
+      "name": "Other Example Zero",
+      "desc": "Other Example Zero Description"
+    }
   }
 }

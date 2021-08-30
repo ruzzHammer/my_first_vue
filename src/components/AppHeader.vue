@@ -14,6 +14,11 @@ export default {
       ThemeSwitcher,
       LocaleSwitcher
     },
+    methods: {
+        isHome() {
+            return this.$route.name === 'Home'
+        }
+    },
 }
 </script>
 
@@ -26,7 +31,7 @@ export default {
     display: flex;
     align-items: center;
     transition: .3s ease-in-out;
-    &::before {
+    &::before, &::after {
         content: '';
         position: absolute;
         top: 0;
@@ -42,6 +47,7 @@ export default {
         mask-size: 100% 100%;
         background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
         z-index: -1;
+        transition: .8s ease-in-out;
         @include malg {
             height: 340px;
         }
@@ -53,8 +59,22 @@ export default {
             background: linear-gradient(357deg, rgba(var(--theme-primary-color), 0.22) 6%, rgba(var(--bgc-primary),1) 62%);
         }
     }
+    &::after {
+        left: 100%;
+        transform: scaleX(-1);
+    }
     .locale-switcher {
         margin-left: auto;
+    }
+}
+.non-home .header {
+    &::before {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    &::after {
+        transform: translateX(-100%) scaleX(-1);
+        opacity: 0;
     }
 }
 </style>

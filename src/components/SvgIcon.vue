@@ -24,12 +24,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/scss/_app.scss';
-.socials-icon:hover {
-    fill: rgb(var(--theme-primary-color));
-    path {
-        fill: rgb(var(--theme-primary-color));
-    }
-}
 .socials-icon {
     fill: rgb(var(--text-primary-color));
     path {
@@ -37,10 +31,29 @@ export default {
     }
 }
 
-.input-group__icon .icon,
-.links-item--themed .links-item__icon .icon {
+.socials-icon:hover {
+    fill: rgb(var(--theme-primary-color));
     path {
         fill: rgb(var(--theme-primary-color));
+    }
+}
+
+.input-group__icon .icon,
+.links-item--themed .links-item__icon .icon,
+.info-header .socials-icon {
+    path {
+        fill: rgb(var(--theme-primary-color));
+    }
+}
+
+.info-header .socials-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.info-header .socials-icon:hover {
+    path {
+        fill: rgb(var(--text-primary-color));
     }
 }
 

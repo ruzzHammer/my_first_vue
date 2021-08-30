@@ -1,9 +1,5 @@
 <template>
-    <div 
-    :class="{
-        'non-home': !isHome()    
-    }"
-    class="info">
+    <div class="info">
         <div class="info-header">
             <div class="info-header__img" v-if="avatar">
                 <img :src="require(`@/assets/${avatar}`)" alt="">
@@ -11,11 +7,17 @@
             
             <h1 class="info-header__title" v-if="name">{{ name }}</h1>
             <p class="info-header__subtitle" v-if="catchPhrase">{{ catchPhrase }}</p>
+            <p class="info-header__page-title" v-if="!isHome()">{{ $t(`titles.${(this.$route.name).toLowerCase()}`) }}</p>
+            <div class="info-header__navigation">
+                <app-socials v-if="!isHome()" :socials="socials"></app-socials>
+                <navigation-links></navigation-links>
+            </div>
         </div>
         
-        <navigation-links></navigation-links>
 
-        <div class="info-body">
+        <div
+        v-if="isHome()" 
+        class="info-body">
             <div class="info-personal">
                 <h2>{{ $t('infoCard.personalInfo.title') }}</h2>
                 <table>
@@ -56,6 +58,7 @@
 import SvgIcon from './SvgIcon.vue';
 import FeedbackForm from './FeedbackForm.vue';
 import NavigationLinks from './NavigationLinks.vue';
+import AppSocials from './AppSocials.vue';
 
 export default {
     name: 'InfoCard',
@@ -71,13 +74,14 @@ export default {
     components: {
         SvgIcon,
         FeedbackForm,
-        NavigationLinks
+        NavigationLinks,
+        AppSocials
     },
     methods: {
         isHome() {
             return this.$route.name === 'Home'
         }
-    }
+    },
 }
 </script>
 
@@ -92,15 +96,15 @@ export default {
         flex-direction: column;
         align-items: center;
         margin-top: 138px;
-        margin-bottom: 100px;
         transition: .3s ease-in-out;
+        position: relative;
+        width: 100%;
+        max-width: $containerSize;
         @include malg {
             margin-top: 68px;
-            margin-bottom: 50px;
         }
         @include masm {
             margin-top: 50px;
-            margin-bottom: 24px;
         }
         @include maxs {
             margin-top: 20px;
@@ -111,7 +115,7 @@ export default {
             height: 333px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 23px;
+            margin: 0 auto 23px;
             transition: .3s ease-in-out;
             @include malg {
                 width: 260px;
@@ -130,7 +134,8 @@ export default {
         }
         &__title {
             margin: 0; 
-            transition: .3s ease-in-out;
+            transition: font-size color .3s ease-in-out;
+            text-align: center;
             @include malg {
                 margin-bottom: 10px;
             }
@@ -140,11 +145,18 @@ export default {
             max-width: 646px;
             margin: 0;
             text-align: center;
-            transition: .5s ease-in-out;
+            transition: display .5s ease-in-out;
             @include malg {
                 max-width: 500px;
                 padding: 0 15px;
             }
+        }
+        &__page-title {
+            font-size: 70px;
+            line-height: 1.3;
+            color: rgb(var(--text-inverted-color));
+            font-weight: 700;
+            animation: .3s fadeIn ease-in-out forwards;
         }
     }
 
@@ -225,24 +237,82 @@ export default {
         }
     }
 }
-.transition-leave-to,
-.transition-enter-from,
+.non-home {
+    .transition-leave-to,
+    .transition-enter,
+    & {
+        .info-header {
+            margin-top: 0;
+            &__img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 4px;
+            }
+            &__title {
+                font-size: 24px;
+                line-height: 30px;
+                color: rgb(var(--text-inverted-color));
+            }
+            &__subtitle {
+                display: none;
+            }
+            &__navigation {
+                .socials {
+                    justify-content:  flex-start;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
 .non-home {
     .info-header {
-        margin-top: 0;
-        margin-bottom: 7px;
-        &__img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 4px;
+        &__navigation {
+            position: absolute;
+            top: -3px;
+            left: 0;
         }
-        &__title {
-            font-size: 24px;
-            line-height: 30px;
+    }
+}
+.non-home {
+    .transition-enter-active, & {
+        .info-header {
+            &__navigation {
+                position: absolute;
+                top: -3px;
+                left: 0;
+            }
         }
-        &__subtitle {
-            display: none;
+    }
+}
+
+.transition-leave-active {
+    .info-header {
+        &__navigation {
+            position: relative;
+            top: 0;
         }
+        &__page-title {
+            animation: .3s fadeOut ease-in-out forwards;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 

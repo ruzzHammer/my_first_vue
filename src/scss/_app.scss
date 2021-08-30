@@ -7,9 +7,20 @@ body {
     padding: 0;
     color: rgb(var(--text-primary-color));
     background: rgb(var(--bgc-primary));
+    min-height: 100vh;
     &.locale-ru {
         font-family: 'Fira Sans', Arial, sans-serif;
     }
+}
+
+#app {
+    min-height: 100vh;
+}
+
+.content-wrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
 :root {
@@ -18,8 +29,8 @@ body {
   --bs-primary: 0, 0, 0;
   --border-primary-color: 50, 50, 50;
   --text-primary-color: 35, 31, 32;
+  --text-inverted-color: 255, 255, 255;
   --theme-primary-color: 246, 121, 82;
-  --switch-size: 4rem;
 }
 
 :root.dark-theme {
@@ -28,6 +39,7 @@ body {
   --bs-primary: 255, 255, 255;
   --border-primary-color: 230, 230, 230;
   --text-primary-color: 221, 221, 221;
+  --text-inverted-color: 15, 15, 15;
   --theme-primary-color: 133, 255, 173;
 }
 

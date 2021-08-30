@@ -1,7 +1,7 @@
 <template>
 <div class="feedback-form">
     <h2>{{ $t('feedback.title') }}</h2>
-    <form>
+    <form @submit.prevent="">
         <div class="input-group"><input type="text" name="feedbackName" id="feedbackName" :placeholder="$t('feedback.input_name')" autocomplete="off">
             <label for="feedbackName">
                 <span class="input-group__icon">

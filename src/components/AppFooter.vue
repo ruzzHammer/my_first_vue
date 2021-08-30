@@ -36,7 +36,6 @@ export default {
         }
     }
 </style>
-// these attributes are added from translation files
 <style lang="scss">
     @import '@/scss/_app.scss';
     .footer {

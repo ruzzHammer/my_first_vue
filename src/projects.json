@@ -1,0 +1,67 @@
+{
+    "projects": [
+        {
+            "category": "sites",
+            "name": "projects.sites_example1.name",
+            "desc": "projects.sites_example1.desc",
+            "time": "50",
+            "price": "700$",
+            "used": "HTML, CSS, JS",
+            "background": "@/assets/projects/project-1.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example2.name",
+            "desc": "projects.sites_example2.desc",
+            "time": "20",
+            "price": "400$",
+            "used": "HTML, CSS, JS",
+            "background": "@/assets/projects/project-2.jpg"
+        },
+        {
+            "category": "sites",
+            "name": "projects.sites_example0.name",
+            "desc": "projects.sites_example0.desc",
+            "time": "30",
+            "price": "300$",
+            "used": "VUE",
+            "background": "@/assets/projects/project-0.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example1.name",
+            "desc": "projects.apps_example1.desc",
+            "time": "120",
+            "price": "0$",
+            "used": "HTML, CSS, JS",
+            "background": "@/assets/projects/project-1.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example2.name",
+            "desc": "projects.apps_example2.desc",
+            "time": "20",
+            "price": "200$",
+            "used": "HTML, CSS, JS",
+            "background": "@/assets/projects/project-2.jpg"
+        },
+        {
+            "category": "apps",
+            "name": "projects.apps_example0.name",
+            "desc": "projects.apps_example0.desc",
+            "time": "80",
+            "price": "800$",
+            "used": "VUE",
+            "background": "@/assets/projects/project-0.jpg"
+        },
+        {
+            "category": "another category 1",
+            "name": "projects.other_example0.name",
+            "desc": "projects.other_example0.desc",
+            "time": "10",
+            "price": "10$",
+            "used": "VUE",
+            "background": "@/assets/projects/project-0.jpg"
+        }
+    ]
+}
