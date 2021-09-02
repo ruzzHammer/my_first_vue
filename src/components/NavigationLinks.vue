@@ -1,6 +1,6 @@
 <template>
     <div class="navigation-links">
-        <router-link v-if="!isHome()" class="links-item links-item--home" to="/">
+        <router-link v-if="!isHome" class="links-item links-item--home" to="/">
             <span class="links-item__title">{{ $t('titles.home') }}</span>
         </router-link>
         <router-link @click="scrollToTop" class="links-item links-item--blue" to="/Services" active-class="links-item--active">
@@ -13,7 +13,7 @@
             <span class="links-item__icon">
                 <svg-icon icon="calc"></svg-icon>
             </span>
-            <span v-if="isHome()" class="links-item__title">{{ $t('titles.calc') }}</span>
+            <span v-if="isHome" class="links-item__title">{{ $t('titles.calc') }}</span>
             <span v-else class="links-item__title">{{ $t('titles.calcAlt') }}</span>
         </router-link>
         <router-link @click="scrollToTop" class="links-item links-item--yellow" to="/Cases" active-class="links-item--active">
@@ -32,15 +32,17 @@ export default {
         SvgIcon,
     },
     methods: {
-        isHome() {
-            return this.$route.name === 'Home'
-        },
         scrollToTop() {
             window.scrollTo({
                 top: 0,
                 left: 0,
             });
         }
+    },
+    computed: {
+        isHome() {
+            return this.$route.name === 'Home'
+        },
     }
 }
 </script>

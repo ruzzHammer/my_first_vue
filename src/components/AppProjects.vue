@@ -47,21 +47,6 @@ export default {
             projects: json.projects,
         }
     },
-    computed: {
-        sites() {
-            return this.projects.filter(project => project.category === 'sites');
-        },
-        apps() {
-            return this.projects.filter(project => project.category === 'apps');
-        },
-        other() {
-            return this.projects.filter(project => 
-                project.category === null || 
-                (project.category !== 'sites' && 
-                project.category !== 'apps'));
-        },
-        
-    },
     methods: {
         setCatRef(el) {
             if (el) {
@@ -77,6 +62,21 @@ export default {
                 el.classList.add('reversed')
             }
         }
+    },
+    computed: {
+        sites() {
+            return this.projects.filter(project => project.category === 'sites');
+        },
+        apps() {
+            return this.projects.filter(project => project.category === 'apps');
+        },
+        other() {
+            return this.projects.filter(project => 
+                project.category === null || 
+                (project.category !== 'sites' && 
+                project.category !== 'apps'));
+        },
+        
     },
     mounted() {
         document.querySelector('.projects-list').style.minHeight = `${document.querySelector('.projects-list').clientHeight}px`

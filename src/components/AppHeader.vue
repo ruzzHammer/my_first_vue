@@ -14,7 +14,7 @@ export default {
       ThemeSwitcher,
       LocaleSwitcher
     },
-    methods: {
+    computed: {
         isHome() {
             return this.$route.name === 'Home'
         }

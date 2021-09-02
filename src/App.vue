@@ -1,6 +1,6 @@
 <template>
 <div 
-:class="{'non-home': !isHome()}"
+:class="{'non-home': !isHome}"
 class="content-wrap">
   <app-header></app-header>
   <router-view v-slot="{ Component }">
@@ -22,7 +22,7 @@ export default {
     AppHeader,
     AppFooter
   },
-  methods: {
+  computed: {
       isHome() {
           return this.$route.name === 'Home'
       }

@@ -13,6 +13,12 @@
 <script>
 export default {
   name: 'LocaleSwitcher',
+  data() {
+    return {
+      locales: process.env.VUE_APP_I18N_SUPPORTED_LOCALE.split(','),
+      selected: undefined
+    }
+  },
   methods: { 
     switchLocale(locale) {
       if (this.$i18n.locale !== locale) {
@@ -34,12 +40,6 @@ export default {
         document.body.classList.remove('locale-ru')
       }
     },
-  },
-  data() {
-    return {
-      locales: process.env.VUE_APP_I18N_SUPPORTED_LOCALE.split(','),
-      selected: undefined
-    }
   },
   mounted() {
       this.getDefaultLocaleItem();

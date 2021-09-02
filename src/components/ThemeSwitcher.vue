@@ -21,10 +21,7 @@ export default {
   components: {
     SvgIcon
   },
-  mounted() {
-    const initUserTheme = localStorage.getItem("user-theme") ? localStorage.getItem("user-theme") : this.getMediaPreference();
-    this.setTheme(initUserTheme);
-  },
+  
 
   data() {
     return {
@@ -45,6 +42,8 @@ export default {
             this.setTheme("light-theme");
         }
     },
+  },
+  computed: {
     getMediaPreference() {
         const hasDarkPreference = window.matchMedia(
             "(prefers-color-scheme: dark)"
@@ -55,7 +54,11 @@ export default {
             return "light-theme";
         }
     },
-  }
+  },
+  mounted() {
+    const initUserTheme = localStorage.getItem("user-theme") ? localStorage.getItem("user-theme") : this.getMediaPreference();
+    this.setTheme(initUserTheme);
+  },
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div 
-    v-for="(project, index) in filteredProjects(array)"
+    v-for="(project, index) in filteredProjects"
     :key="index"
     class="projects-item">
         <div class="projects-item__header">
@@ -50,8 +50,6 @@ export default {
     data() {
         return {
             page: 1,
-            pages: Math.ceil(this.array.length / 6),
-            hasNextPage: true
         }
     },
     props: {
@@ -59,13 +57,21 @@ export default {
             type: Array,
         }
     },
-    methods: {
-        filteredProjects(array) {
-            const start = (this.page - 1) * 6;
-            const end = this.page * 6;
-            this.hasNextPage = array.length > end;
-
-            return array.slice(start, end);
+    computed: {
+        startIndex() {
+            return (this.page - 1) * 6;
+        },
+        endIndex() {
+            return this.page * 6;
+        },
+        hasNextPage() {
+            return this.array.length > this.endIndex;
+        }, 
+        pages() {
+            return Math.ceil(this.array.length / 6)
+        },
+        filteredProjects() {
+            return this.array.slice(this.startIndex, this.endIndex);
         }
     }
 }

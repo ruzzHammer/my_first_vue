@@ -2,7 +2,7 @@
     <div class="info">
         <div class="info-header">
             <div class="info-header__top">
-                <router-link to="/" v-if="!isHome()" class="info-header__link-to-home"></router-link>
+                <router-link to="/" v-if="!isHome" class="info-header__link-to-home"></router-link>
                 <div class="info-header__img" v-if="avatar">
                     <img :src="require(`@/assets/${avatar}`)" alt="">
                 </div>
@@ -10,9 +10,9 @@
                 <h1 class="info-header__title" v-if="name">{{ name }}</h1>
                 <p class="info-header__subtitle" v-if="catchPhrase">{{ catchPhrase }}</p>
             </div>
-            <p class="info-header__page-title" v-if="!isHome()">{{ $t(`titles.${(this.$route.name).toLowerCase()}`) }}</p>
+            <p class="info-header__page-title" v-if="!isHome">{{ $t(`titles.${(this.$route.name).toLowerCase()}`) }}</p>
             <div class="info-header__navigation">
-                <app-socials v-if="!isHome()" :socials="socials"></app-socials>
+                <app-socials v-if="!isHome" :socials="socials"></app-socials>
                 <navigation-links></navigation-links>
             </div>
         </div>
@@ -21,7 +21,7 @@
 
         <div class="info-body">
             <div class="info-personal">
-                <template v-if="isHome()">
+                <template v-if="isHome">
                 <h2>{{ $t('infoCard.personalInfo.title') }}</h2>
                 <table>
                     <tr class="personal-item" v-if="name">
@@ -86,7 +86,7 @@ export default {
         AppSocials,
         AppProjects
     },
-    methods: {
+    computed: {
         isHome() {
             return this.$route.name === 'Home'
         }
