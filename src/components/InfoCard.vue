@@ -119,13 +119,18 @@ export default {
             margin-top: 20px;
         }
         &__img {
+            position: relative;
             display: block;
-            width: 333px;
-            height: 333px;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto 23px;
             transition: .3s ease-in-out;
+            background: rgba( 255, 255, 255, 0.3 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 3px );
+            z-index: 10;
             @include malg {
                 width: 260px;
                 height: 260px;
@@ -134,11 +139,17 @@ export default {
                 width: 135px;
                 height: 135px;
             }
+            &:hover {
+                img {
+                    transform: rotate(10deg) scale(1.1);
+                }
+            }
             img {
                 display: block;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                z-index: 2;
+                transition: .3s ease-in-out;
             }
         }
         &__title {

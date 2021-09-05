@@ -6,8 +6,7 @@ body {
     margin: 0;
     padding: 0;
     color: rgb(var(--text-primary-color));
-    background: rgb(var(--bgc-primary));
-    min-height: 100vh;
+    background: var(--gradient);
     &.locale-ru {
         font-family: 'Fira Sans', Arial, sans-serif;
     }
@@ -24,23 +23,27 @@ body {
 }
 
 :root {
-  --bgc-primary: 251, 251, 253;
+  --bgc-primary: 245, 245, 245;
   --bgc-secondary: 255, 255, 255;
   --bs-primary: 0, 0, 0;
   --border-primary-color: 50, 50, 50;
-  --text-primary-color: 35, 31, 32;
+  --text-primary-color: 13, 23, 29;
   --text-inverted-color: 255, 255, 255;
-  --theme-primary-color: 246, 121, 82;
+  --theme-primary-color: 69, 176, 125;
+  --gradient: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+  
+  ;
 }
 
 :root.dark-theme {
-  --bgc-primary: 30, 30, 30;
+  --bgc-primary: 25, 28, 40;
   --bgc-secondary: 20, 20, 20;
   --bs-primary: 255, 255, 255;
   --border-primary-color: 230, 230, 230;
-  --text-primary-color: 221, 221, 221;
+  --text-primary-color: 240, 240, 240;
   --text-inverted-color: 15, 15, 15;
-  --theme-primary-color: 0, 143, 48;
+  --theme-primary-color: 64, 95, 255;
+  --gradient: linear-gradient(75deg, #191c28, #292e41, #2a2e3f);
 }
 
 * {
@@ -125,6 +128,8 @@ p {
     border: 1px solid rgba(37, 37, 37, 0.05);
     border-radius: 10px;
     padding: 30px;
+    background: rgba( 255, 255, 255, 0.3 );
+    backdrop-filter: blur(5px);
     @include masm {
         padding: 10px;
 
@@ -162,7 +167,45 @@ p {
 .icon { 
     width: 50px; 
     height: 50px;
-  }
+}
+
+.bg-bubble {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2), inset 0px 2.5px 7px 1.25px rgba(255, 255, 255, 1);
+    height: 50px;
+    width: 50px;
+    background: url(~@/assets/svg_sources/vue.svg) no-repeat top 15px center / 30px auto;
+    filter: blur(.75px);
+    animation: 30s bubblesGoUp linear infinite alternate;
+    z-index: -1;
+    &::after {
+        background: radial-gradient(ellipse at center,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);
+        border-radius: 50%;
+        box-shadow: inset 0 5px 8px rgba(255, 255, 255, 0.3);
+        content: "";
+        height: 45px;
+        left: .25px;
+        position: absolute;
+        width: 45px;
+    }
+
+    &.vue-icon {
+        background: url(~@/assets/svg_sources/vue.svg) no-repeat center center / 30px auto;
+    }
+    &.js-icon {
+        background: url(~@/assets/svg_sources/js.svg) no-repeat center center / 30px auto;
+    }
+    &.css-icon {
+        background: url(~@/assets/svg_sources/css.svg) no-repeat center center / 30px auto;
+    }
+    &.scss-icon {
+        background: url(~@/assets/svg_sources/sass.svg) no-repeat center center / 30px auto;
+    }
+    &.html-icon {
+        background: url(~@/assets/svg_sources/html.svg) no-repeat center center / 30px auto;
+    }
+}
 
   
 
@@ -194,3 +237,29 @@ p {
         transform: translateY(0);
     }
 }
+
+@keyframes bubblesGoUp {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(-1000px);
+    }
+}
+
+@keyframes bubblesPop {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+  }

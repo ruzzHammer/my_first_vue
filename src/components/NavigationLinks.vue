@@ -125,7 +125,8 @@ export default {
 .links {
     &-item {
         position: relative;
-        background: rgb(var(--bgc-secondary));
+        background: rgba( 255, 255, 255, 0.45 );
+        backdrop-filter: blur( 4px );
         box-shadow: -2px 8px 46px rgba(37, 45, 50, 0.05);
         border-radius: 10px;
         border: 1px solid transparent;

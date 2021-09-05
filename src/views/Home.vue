@@ -1,7 +1,7 @@
 <template>
   <info-card 
   :name="$t('infoCard.name')" 
-  avatar="avatar.jpg" 
+  avatar="avatar.png" 
   :catchPhrase="$t('infoCard.catchPhrase')"
   email="18russell.1998@gmail.com"
   :location="$t('infoCard.location')"
