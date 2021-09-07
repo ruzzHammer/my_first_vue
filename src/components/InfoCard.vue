@@ -67,7 +67,7 @@ import FeedbackForm from './FeedbackForm.vue';
 import NavigationLinks from './NavigationLinks.vue';
 import AppSocials from './AppSocials.vue';
 import AppProjects from './AppProjects.vue';
-
+import isHome from '../mixins/isHome.js';
 export default {
     name: 'InfoCard',
     props: {
@@ -86,11 +86,7 @@ export default {
         AppSocials,
         AppProjects
     },
-    computed: {
-        isHome() {
-            return this.$route.name === 'Home'
-        }
-    },
+    mixins: [isHome]
 }
 </script>
 

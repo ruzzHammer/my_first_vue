@@ -8,17 +8,14 @@
 <script>
 import ThemeSwitcher from './ThemeSwitcher.vue';
 import LocaleSwitcher from './LocaleSwitcher.vue';
+import isHome from '../mixins/isHome.js';
 export default {
     name: 'AppHeader',
     components: {
       ThemeSwitcher,
       LocaleSwitcher
     },
-    computed: {
-        isHome() {
-            return this.$route.name === 'Home'
-        }
-    },
+    mixins: [isHome]
 }
 </script>
 

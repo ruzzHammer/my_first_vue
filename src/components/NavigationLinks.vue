@@ -27,6 +27,7 @@
 
 <script>
 import SvgIcon from './SvgIcon.vue';
+import isHome from '../mixins/isHome.js';
 export default {
     components: {
         SvgIcon,
@@ -39,11 +40,7 @@ export default {
             });
         }
     },
-    computed: {
-        isHome() {
-            return this.$route.name === 'Home'
-        },
-    }
+    mixins: [isHome]
 }
 </script>
 

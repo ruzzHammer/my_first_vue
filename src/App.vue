@@ -16,6 +16,7 @@ class="content-wrap">
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import generateBackground from './utils/generateBackground.js';
+import isHome from './mixins/isHome.js';
 
 export default {
   name: 'App',
@@ -23,14 +24,10 @@ export default {
     AppHeader,
     AppFooter,
   },
-  computed: {
-      isHome() {
-          return this.$route.name === 'Home'
-      }
-  },
   mounted() {
     generateBackground();
-  }
+  },
+  mixins: [isHome]
 }
 </script>
 
