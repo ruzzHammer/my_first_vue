@@ -16,27 +16,22 @@
             {{ $t(`projects.keywords.${category}`) }}
         </button>
       </div>
-      <!-- <div class="projects-list" v-if="projects.length" ref="projectsListWrapper" :style="{height: `${this.$refs.projectsListWrapper.innerHeight}px`}"> -->
-          <div class="projects-list" v-if="projects.length">
-          <projects-list 
-          :array="sites" 
-          v-if="currentCategory === 'sites'"
-          ></projects-list>
-          <projects-list 
-          :array="apps" 
-          v-if="currentCategory === 'apps'"
-          ></projects-list>
-          <projects-list 
-          :array="other" 
-          v-if="currentCategory === 'other'"
-          ></projects-list>
+      <div class="projects-list" v-if="projects.length">
+          <template v-for="category in categories" :key="category">
+              <keep-alive>
+                <projects-list 
+                v-if="currentCategory === category"
+                :array="this[category]" 
+                ></projects-list>
+              </keep-alive>
+          </template>
       </div>
   </div>
 </template>
 
 <script>
-import ProjectsList from '@/components/ProjectsList.vue';
 import json from '@/projects.json'
+import ProjectsList from './ProjectsList.vue';
 export default {
     name: "AppProjects",
     data() {
@@ -82,7 +77,7 @@ export default {
         document.querySelector('.projects-list').style.minHeight = `${document.querySelector('.projects-list').clientHeight}px`
     },
     components: {
-        ProjectsList,
+        ProjectsList
     }
 }
 </script>
