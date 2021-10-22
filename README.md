@@ -1,4 +1,6 @@
-# energos_battle
+# vuefolio beta
+
+Unfinished version of portfolio made on Vue 3
 
 ## Project setup
 ```
